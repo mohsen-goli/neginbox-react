@@ -129,13 +129,13 @@ export default function Testimonials() {
 
   return (
     <section id="reviews" className="py-20 bg-[#faf8f5]">
-      <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="text-sm text-[#8c6527] font-medium mb-2">
             صدای خریداران نگین‌باکس
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1816] mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1816] mb-4">
             رضایت مشتریان از تخت باکس نگین‌باکس
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

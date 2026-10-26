@@ -10,7 +10,7 @@ import FloatingContacts from "./components/FloatingContacts";
 
 function App() {
   return (
-    <div dir="rtl" className="min-h-screen bg-[#faf8f5] font-sans">
+    <div dir="rtl" className="min-h-screen bg-[#f8f7f4] font-sans">
       <Header />
       <main>
         <Hero />

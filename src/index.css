@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* فونت اصلی سایت */
 @theme {
   --font-sans: "Estedad", system-ui, sans-serif;
 }
@@ -12,6 +13,22 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  /* رنگ‌های اصلی پروژه قدیمی (از فایل style.css) */
+  --bg: #f8f7f4;
+  --surface: #ffffff;
+  --surface-alt: #f2f0eb;
+  --ink: #1a1816;
+  --ink-secondary: #5f5c58;
+  --ink-muted: #8e8a84;
+  --accent: #8c6527;
+  --accent-soft: #c9a76a;
+  --border: #e5e2db;
+  --green: #25d366;
+}
+
 body {
+  background-color: var(--bg);
+  color: var(--ink);
   font-family: "Estedad", system-ui, sans-serif;
 }
