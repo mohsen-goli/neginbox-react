@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Estedad", system-ui, sans-serif;
+}
+
+* {
+  font-family: "Estedad", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Estedad", system-ui, sans-serif;
+}

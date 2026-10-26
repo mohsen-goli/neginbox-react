@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { CONTACT } from "../data/products";
+import { TelegramIcon, BaleIcon } from "./SocialIcons";
 
 const NAV_LINKS = [
   { href: "#products", label: "مجموعه محصولات" },
@@ -10,6 +11,21 @@ const NAV_LINKS = [
   { href: "#about", label: "مزایای نگین‌باکس" },
   { href: "#about-us", label: "درباره ما" },
   { href: "#contact", label: "سفارش و تماس" },
+];
+
+const SOCIAL_LINKS = [
+  {
+    href: CONTACT.telegram,
+    label: "تلگرام",
+    icon: TelegramIcon,
+    color: "#229ED9",
+  },
+  {
+    href: CONTACT.bale,
+    label: "بله",
+    icon: BaleIcon,
+    color: "#79D99A",
+  },
 ];
 
 export default function Header() {
@@ -22,7 +38,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // قفل اسکرول وقتی منوی موبایل بازه
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
@@ -58,19 +73,20 @@ export default function Header() {
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between gap-4">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2 shrink-0">
+          {/* Logo (فقط عکس) */}
+          <a
+            href="#"
+            className="flex items-center shrink-0"
+            aria-label="نگین‌باکس"
+          >
             <img
               src="/logo.png"
               alt="نگین‌باکس"
-              className="h-10 w-auto"
+              className="h-12 w-auto"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
             />
-            <span className="font-bold text-xl text-[#1a1816] tracking-wider">
-              NEGINBOX
-            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -87,7 +103,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA + Mobile Toggle */}
+          {/* CTA + Social + Mobile Toggle */}
           <div className="flex items-center gap-2">
             <a
               href={CONTACT.whatsappUrl}
@@ -99,6 +115,28 @@ export default function Header() {
               <span>مشاوره در واتساپ</span>
             </a>
 
+            {/* Social links - فقط دسکتاپ */}
+            <div className="hidden md:flex items-center gap-1">
+              {SOCIAL_LINKS.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={s.href}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    title={s.label}
+                    className="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                    style={{ color: s.color }}
+                  >
+                    <Icon width={16} height={16} />
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Mobile toggle */}
             <button
               type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -154,11 +192,32 @@ export default function Header() {
                 </motion.a>
               ))}
 
+              {/* Social links in mobile */}
+              <div className="flex gap-2 mt-4">
+                {SOCIAL_LINKS.map((s) => {
+                  const Icon = s.icon;
+                  return (
+                    <a
+                      key={s.href}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-full bg-gray-100 text-sm"
+                      style={{ color: s.color }}
+                    >
+                      <Icon width={14} height={14} />
+                      {s.label}
+                    </a>
+                  );
+                })}
+              </div>
+
               <a
                 href={CONTACT.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 bg-[#1a1816] text-white text-center py-3 rounded-full hover:bg-[#8c6527] transition-colors"
+                className="mt-4 bg-[#1a1816] text-white text-center py-3 rounded-full hover:bg-[#8c6527] transition-colors"
               >
                 مشاوره در واتساپ
               </a>
