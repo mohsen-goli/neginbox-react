@@ -1,32 +1,59 @@
-# React + TypeScript + Vite
+# NeginBox — نگین‌باکس
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive, RTL Persian website for **NeginBox**, a local under-bed storage (تخت‌باکس) business. Rebuilt with React and TypeScript from an earlier vanilla JS version.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** <LIVE_URL>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Persian RTL interface with the Estedad font
+- Hero section with an image carousel
+- Product showcase driven by a typed data file
+- "Why us" and customer testimonials sections
+- Floating contact buttons and social links in the header
+- Contact section for reaching the business directly
+- Responsive layout for mobile, tablet and desktop
+- Smooth animations with Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the Oxlint configuration
+| Category | Technology |
+|---|---|
+| Framework | React 19 + Vite |
+| Language | TypeScript |
+| Styling | Tailwind CSS 4 |
+| Animation | Framer Motion |
+| Icons | Lucide React |
+| Linting | Oxlint |
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Project Structure
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+src/
+├── components/   # Header, Hero, HeroCarousel, About, Products,
+│                 # WhyUs, Testimonials, Contact, FloatingContacts, Footer
+├── data/         # products.ts
+├── assets/
+├── App.tsx
+└── main.tsx
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Getting Started
+
+```bash
+git clone https://github.com/mohsen-goli/neginbox-react.git
+cd neginbox-react
+npm install
+npm run dev
+```
+
+Other scripts: `npm run build`, `npm run lint`, `npm run preview`.
+
+## Project Purpose
+
+A real-world website for a local business. This version replaces the original HTML/CSS/JS site with a component-based React architecture.
+
+## Author
+
+**Mohsen Golzad** — Frontend Developer
+[GitHub](https://github.com/mohsen-goli) · [LinkedIn](<LINKEDIN_URL>)
